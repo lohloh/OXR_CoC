@@ -91,13 +91,9 @@ void CWeaponMagazined::Load(LPCSTR section)
 
     //Alundaio: LAYERED_SND_SHOOT
 #ifdef LAYERED_SND_SHOOT
-    m_layered_sounds.LoadSound(section, "snd_shoot", "sndShot", true, m_eSoundShot);
-    //if (WeaponSoundExist(section, "snd_shoot_actor"))
-    //    m_layered_sounds.LoadSound(section, "snd_shoot_actor", "sndShotActor", false, m_eSoundShot);
+    m_layered_sounds.LoadSound(section, "snd_shoot", "sndShot", false, m_eSoundShot);
 #else
-    m_sounds.LoadSound(section, "snd_shoot", "sndShot", true, m_eSoundShot);  //Alundaio: Set exclusive to true
-    //if (WeaponSoundExist(section, "snd_shoot_actor"))
-    //    m_sounds.LoadSound(section, "snd_shoot_actor", "sndShot", false, m_eSoundShot);
+    m_sounds.LoadSound(section, "snd_shoot", "sndShot", false, m_eSoundShot);
 #endif
     //-Alundaio
 
@@ -200,7 +196,7 @@ void CWeaponMagazined::FireStart()
     { // misfire
         //Alundaio
 #ifdef EXTENDED_WEAPON_CALLBACKS
-        IGameObject	*object = smart_cast<IGameObject*>(H_Parent());
+        CGameObject *object = smart_cast<CGameObject*>(H_Parent());
         if (object)
             object->callback(GameObject::eOnWeaponJammed)(object->lua_game_object(), this->lua_game_object());
 #endif
@@ -1269,7 +1265,7 @@ void CWeaponMagazined::OnZoomIn()
 
     //Alundaio: callback not sure why vs2013 gives error, it's fine
 #ifdef EXTENDED_WEAPON_CALLBACKS
-    CGameObject	*object = smart_cast<CGameObject*>(H_Parent());
+    CGameObject *object = smart_cast<CGameObject*>(H_Parent());
     if (object)
         object->callback(GameObject::eOnWeaponZoomIn)(object->lua_game_object(),this->lua_game_object());
 #endif
@@ -1298,13 +1294,13 @@ void CWeaponMagazined::OnZoomOut()
     if (GetState() == eIdle)
         PlayAnimIdle();
 
-	//Alundaio
+    //Alundaio
 #ifdef EXTENDED_WEAPON_CALLBACKS
-	CGameObject	*object = smart_cast<CGameObject*>(H_Parent());
-	if (object)
-		object->callback(GameObject::eOnWeaponZoomOut)(object->lua_game_object(), this->lua_game_object());
+    CGameObject *object = smart_cast<CGameObject*>(H_Parent());
+    if (object)
+        object->callback(GameObject::eOnWeaponZoomOut)(object->lua_game_object(), this->lua_game_object());
 #endif
-	//-Alundaio
+    //-Alundaio
 
     CActor* pActor = smart_cast<CActor*>(H_Parent());
 

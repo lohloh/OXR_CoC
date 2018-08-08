@@ -1,27 +1,43 @@
 version: '{build}'
+
 pull_requests:
   do_not_increment_build_number: true
+
 skip_tags: true
+
 image:
 - Visual Studio 2017
+
 configuration:
 - Release_COC
 - Release
 - Mixed_COC
 - Mixed
 - Debug
+
 platform:
 - x64
 - x86
+
+cache:
+- packages -> **\packages.config
+
 before_build:
-- cmd: git submodule update --init --recursive
+- cmd: >-
+    nuget restore src\engine.sln
+
+    git submodule update --init --recursive
+
 build:
   project: src/engine.sln
   parallel: true
   verbosity: minimal
+
 after_build:
 - cmd: xrbuild.cmd
+
 test: off
+
 artifacts:
 - path: res/OpenXRay.Dx86.7z
   name: OpenXRay.Dx86.7z
@@ -43,6 +59,7 @@ artifacts:
   name: OpenXRay_CoC.Rx86.7z
 - path: res/OpenXRay_CoC.Rx64.7z
   name: OpenXRay_CoC.Rx64.7z
+  
 deploy:
 - provider: GitHub
   tag: OXR_CoC$(appveyor_build_version)

@@ -235,6 +235,9 @@
     <Filter Include="General\Profiler">
       <UniqueIdentifier>{b310210e-3620-4a9a-a6a8-02077cc6f0f4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Interfaces\ILoadingScreen">
+      <UniqueIdentifier>{84e3429f-eb46-4db1-bd1c-9af2413b1de0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="defines.h">
@@ -253,9 +256,6 @@
       <Filter>Interfaces\Input</Filter>
     </ClInclude>
     <ClInclude Include="xr_input.h">
-      <Filter>Interfaces\Input</Filter>
-    </ClInclude>
-    <ClInclude Include="xr_input_xinput.h">
       <Filter>Interfaces\Input</Filter>
     </ClInclude>
     <ClInclude Include="ISheduled.h">
@@ -567,6 +567,9 @@
     <ClInclude Include="main.h">
       <Filter>General</Filter>
     </ClInclude>
+    <ClInclude Include="ILoadingScreen.h">
+      <Filter>Interfaces\ILoadingScreen</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="defines.cpp">
@@ -584,10 +587,7 @@
     <ClCompile Include="IInputReceiver.cpp">
       <Filter>Interfaces\Input</Filter>
     </ClCompile>
-    <ClCompile Include="Xr_input.cpp">
-      <Filter>Interfaces\Input</Filter>
-    </ClCompile>
-    <ClCompile Include="xr_input_xinput.cpp">
+    <ClCompile Include="xr_input.cpp">
       <Filter>Interfaces\Input</Filter>
     </ClCompile>
     <ClCompile Include="ISheduled.cpp">
@@ -893,5 +893,11 @@
     <Text Include="Effects description.txt" />
     <Text Include="features.txt" />
     <Text Include="TODO.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Natvis Include="..\TypeHelper.natvis" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
 </Project>

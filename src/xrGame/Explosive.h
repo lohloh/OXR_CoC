@@ -84,6 +84,7 @@ private:
     //-Alundaio
 
 protected:
+
     CWalmarkManager m_wallmark_manager;
     // ID персонажа который иницировал действие
     u16 m_iCurrentParentID;

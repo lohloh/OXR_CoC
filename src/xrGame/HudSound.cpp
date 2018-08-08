@@ -182,11 +182,12 @@ void HUD_SOUND_COLLECTION::LoadSound(LPCSTR section, LPCSTR line, LPCSTR alias, 
     snd_item.m_alias = alias;
     snd_item.m_b_exclusive = exclusive;
 }
+
 //Alundaio:
 /*
- It's usage is to play a group of sounds HUD_SOUND_ITEMs as if they were a single layered entity. This is a achieved by
- wrapping the class around HUD_SOUND_COLLECTION and tagging them with the same alias. This way, when one for example
- sndShot is played, it will play all the sound items with the same alias.
+    It's usage is to play a group of sounds HUD_SOUND_ITEMs as if they were a single layered entity. This is a achieved by
+    wrapping the class around HUD_SOUND_COLLECTION and tagging them with the same alias. This way, when one for example
+    sndShot is played, it will play all the sound items with the same alias.
 */
 //----------------------------------------------------------
 #ifdef LAYERED_SND_SHOOT
@@ -218,8 +219,7 @@ void HUD_SOUND_COLLECTION_LAYERED::SetPosition(pcstr alias, const Fvector& pos)
             sound_item.SetPosition(alias, pos);
 }
 
-void HUD_SOUND_COLLECTION_LAYERED::PlaySound(pcstr alias, const Fvector& position, const IGameObject* parent,
-                                             bool hud_mode, bool looped, u8 index)
+void HUD_SOUND_COLLECTION_LAYERED::PlaySound(pcstr alias, const Fvector& position, const IGameObject* parent, bool hud_mode, bool looped, u8 index)
 {
     for (auto& sound_item : m_sound_items)
         if (sound_item.m_alias == alias)
@@ -249,7 +249,7 @@ void HUD_SOUND_COLLECTION_LAYERED::LoadSound(pcstr section, pcstr line, pcstr al
     if (pSettings->section_exist(buf_str))
     {
         string256 sound_line;
-        xr_strcpy(sound_line, "snd_1_layer");
+        xr_strcpy(sound_line,"snd_1_layer");
         int k = 1;
         while (pSettings->line_exist(buf_str, sound_line))
         {
@@ -257,10 +257,10 @@ void HUD_SOUND_COLLECTION_LAYERED::LoadSound(pcstr section, pcstr line, pcstr al
             HUD_SOUND_COLLECTION& snd_item = m_sound_items.back();
             snd_item.LoadSound(buf_str, sound_line, alias, exclusive, type);
             snd_item.m_alias = alias;
-            xr_sprintf(sound_line, "snd_%d_layer", ++k);
+            xr_sprintf(sound_line,"snd_%d_layer", ++k);
         }
     }
-    else //For compatibility with normal HUD_SOUND_COLLECTION sounds
+    else // For compatibility with normal HUD_SOUND_COLLECTION sounds
     {
         m_sound_items.resize(m_sound_items.size() + 1);
         HUD_SOUND_COLLECTION& snd_item = m_sound_items.back();
@@ -269,8 +269,7 @@ void HUD_SOUND_COLLECTION_LAYERED::LoadSound(pcstr section, pcstr line, pcstr al
     }
 }
 
-void HUD_SOUND_COLLECTION_LAYERED::LoadSound(CInifile const* ini, pcstr section, pcstr line, pcstr alias,
-                                             bool exclusive, int type)
+void HUD_SOUND_COLLECTION_LAYERED::LoadSound(CInifile const *ini, pcstr section, pcstr line, pcstr alias, bool exclusive, int type)
 {
     pcstr str = ini->r_string(section, line);
     string256 buf_str;
@@ -303,4 +302,4 @@ void HUD_SOUND_COLLECTION_LAYERED::LoadSound(CInifile const* ini, pcstr section,
     }
 }
 #endif
-//-Alundaio 
+//-Alundaio

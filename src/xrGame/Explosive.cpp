@@ -77,14 +77,23 @@ void CExplosive::LightCreate()
     m_pLight->set_shadow(true);
 }
 
-void CExplosive::LightDestroy() { m_pLight.destroy(); }
-CExplosive::~CExplosive(void)
+void CExplosive::LightDestroy()
+{
+    m_pLight.destroy();
+}
+
+CExplosive::~CExplosive(void) 
 {
 #ifndef LAYERED_SND_SHOOT
     sndExplode.destroy();
 #endif
 }
-void CExplosive::Load(LPCSTR section) { Load(pSettings, section); }
+
+void CExplosive::Load(LPCSTR section)
+{
+    Load(pSettings, section);
+}
+
 void CExplosive::Load(CInifile const* ini, LPCSTR section)
 {
     m_fBlastHit = ini->r_float(section, "blast");
@@ -115,7 +124,7 @@ void CExplosive::Load(CInifile const* ini, LPCSTR section)
 
     //Alundaio: LAYERED_SND_SHOOT
 #ifdef LAYERED_SND_SHOOT
-    m_layered_sounds.LoadSound(ini,section, "snd_explode", "sndExplode", false, m_eSoundExplode);
+    m_layered_sounds.LoadSound(ini, section, "snd_explode", "sndExplode", false, m_eSoundExplode);
 #else
     pcstr snd_name = ini->r_string(section, "snd_explode");
     sndExplode.create(snd_name, st_Effect, m_eSoundExplode);

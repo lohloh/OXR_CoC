@@ -37,7 +37,6 @@ extern ECORE_API u32 ps_r3_minmax_sm; //	=	0;
 extern ECORE_API const xr_token qminmax_sm_token[];
 
 extern ECORE_API int ps_r2_fxaa;
-extern ECORE_API int ps_rs_loading_stages;
 
 extern ENGINE_API int ps_r__Supersample;
 extern ECORE_API int ps_r__LightSleepFrames;
@@ -64,11 +63,11 @@ extern ECORE_API float ps_r__ssaDISCARD;
 extern ECORE_API float ps_r__ssaDONTSORT;
 extern ECORE_API float ps_r__ssaHZBvsTEX;
 extern ECORE_API int ps_r__tf_Anisotropic;
+extern ECORE_API float ps_r__tf_Mipbias;
 
 // R1
 extern ECORE_API float ps_r1_ssaLOD_A;
 extern ECORE_API float ps_r1_ssaLOD_B;
-extern ECORE_API float ps_r1_tf_Mipbias;
 extern ECORE_API float ps_r1_lmodel_lerp;
 extern ECORE_API float ps_r1_dlights_clip;
 extern ECORE_API float ps_r1_pps_u;
@@ -89,7 +88,6 @@ enum
 // R2
 extern ECORE_API float ps_r2_ssaLOD_A;
 extern ECORE_API float ps_r2_ssaLOD_B;
-extern ECORE_API float ps_r2_tf_Mipbias;
 
 // R2-specific
 extern ECORE_API Flags32 ps_r2_ls_flags; // r2-only
@@ -142,6 +140,7 @@ extern ECORE_API Fvector3 ps_r2_dof;
 extern ECORE_API float ps_r2_dof_sky; //	distance to sky
 extern ECORE_API float ps_r2_dof_kernel_size; //	7.0f
 
+extern ECORE_API int ps_r3_dyn_wet_surf_opt;
 extern ECORE_API float ps_r3_dyn_wet_surf_near; // 10.0f
 extern ECORE_API float ps_r3_dyn_wet_surf_far; // 30.0f
 extern ECORE_API int ps_r3_dyn_wet_surf_sm_res; // 256
@@ -155,7 +154,7 @@ enum
     R2FLAG_SUN = (1 << 0),
     R2FLAG_SUN_FOCUS = (1 << 1),
     R2FLAG_SUN_TSM = (1 << 2),
-    R2FLAG_SUN_DETAILS = (1 << 3),
+    R2FLAG_DETAIL_SHADOW = (1 << 3),
     R2FLAG_TONEMAP = (1 << 4),
 
     R2FLAG_GI = (1 << 6),
@@ -223,6 +222,5 @@ enum
 
 extern void xrRender_initconsole();
 extern BOOL xrRender_test_hw();
-extern void xrRender_apply_tf();
 
 #endif

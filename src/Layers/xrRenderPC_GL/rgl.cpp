@@ -37,7 +37,7 @@ bool CRender::is_sun()
     if (o.sunstatic)
         return FALSE;
     
-    Fcolor sun_color = ((light*)Lights.sun_adapted._get())->color;
+    Fcolor sun_color = ((light*)Lights.sun._get())->color;
     return (ps_r2_ls_flags.test(R2FLAG_SUN) && (u_diffuse2s(sun_color.r, sun_color.g, sun_color.b)>EPS));
 }
 
@@ -370,7 +370,6 @@ void CRender::create()
     //R_CHK						(HW.pDevice->CreateQuery(D3DQUERYTYPE_EVENT,&q_sync_point[0]));
     //R_CHK						(HW.pDevice->CreateQuery(D3DQUERYTYPE_EVENT,&q_sync_point[1]));
 
-    xrRender_apply_tf();
     PortalTraverser.initialize();
     //	TODO: OGL: Implement FluidManager.
     //	FluidManager.Initialize( 70, 70, 70 );
@@ -433,7 +432,6 @@ void CRender::reset_end()
 
     Target = new CRenderTarget();
 
-    xrRender_apply_tf();
     //FluidManager.SetScreenSize(Device.dwWidth, Device.dwHeight);
 
     // Set this flag true to skip the first render frame,

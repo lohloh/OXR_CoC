@@ -1359,7 +1359,8 @@ void CWeapon::OnZoomIn()
     else
         m_zoom_params.m_fCurrentZoomFactor = CurrentZoomFactor();
 
-    EnableHudInertion(FALSE);
+    // Отключаем инерцию (Заменено GetInertionFactor())
+    // EnableHudInertion(FALSE);
 
     if (m_zoom_params.m_bZoomDofEnabled && !IsScopeAttached())
         GamePersistent().SetEffectorDOF(m_zoom_params.m_ZoomDof);
@@ -1385,7 +1386,9 @@ void CWeapon::OnZoomOut()
     m_zoom_params.m_bIsZoomModeNow = false;
     m_fRTZoomFactor = GetZoomFactor(); // store current
     m_zoom_params.m_fCurrentZoomFactor = 1.f;
-    EnableHudInertion(TRUE);
+
+    // Включаем инерцию (также заменено  GetInertionFactor())
+    // EnableHudInertion	(TRUE);
 
     GamePersistent().RestoreEffectorDOF();
 

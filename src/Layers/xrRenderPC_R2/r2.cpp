@@ -39,7 +39,7 @@ bool CRender::is_sun()
     if (o.sunstatic)
         return FALSE;
 
-    Fcolor sun_color = ((light*)Lights.sun_adapted._get())->color;
+    Fcolor sun_color = ((light*)Lights.sun._get())->color;
     return (ps_r2_ls_flags.test(R2FLAG_SUN) && (u_diffuse2s(sun_color.r, sun_color.g, sun_color.b)>EPS));
 }
 
@@ -321,7 +321,6 @@ void CRender::create()
     for (u32 i = 0; i < HW.Caps.iGPUNum; ++i)
         R_CHK(HW.pDevice->CreateQuery(D3DQUERYTYPE_EVENT, &q_sync_point[i]));
 
-    xrRender_apply_tf();
     ::PortalTraverser.initialize();
 }
 
@@ -396,8 +395,6 @@ void CRender::reset_end()
         Details->Load();
     }
     //-AVO
-
-    xrRender_apply_tf();
 
     // Set this flag true to skip the first render frame,
     // that some data is not ready in the first frame (for example device camera position)
@@ -1218,6 +1215,10 @@ static inline bool match_shader(
 static inline bool match_shader_id(
     LPCSTR const debug_shader_id, LPCSTR const full_shader_id, FS_FileSet const& file_set, string_path& result)
 {
+#if 1
+	strcpy_s					( result, "" );
+	return						false;
+#else // #if 1
 #ifdef DEBUG
     LPCSTR temp = "";
     bool found = false;
@@ -1249,4 +1250,5 @@ static inline bool match_shader_id(
 
     return false;
 #endif // #ifdef DEBUG
+#endif // #if 1
 }

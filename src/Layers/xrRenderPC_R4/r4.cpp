@@ -41,7 +41,7 @@ bool CRender::is_sun()
     if (o.sunstatic)
         return FALSE;
 
-    Fcolor sun_color = ((light*)Lights.sun_adapted._get())->color;
+    Fcolor sun_color = ((light*)Lights.sun._get())->color;
     return (ps_r2_ls_flags.test(R2FLAG_SUN) && (u_diffuse2s(sun_color.r, sun_color.g, sun_color.b)>EPS));
 }
 
@@ -443,7 +443,6 @@ void CRender::create()
         R_CHK(HW.pDevice->CreateQuery(&qdesc, &q_sync_point[i]));
     HW.pContext->End(q_sync_point[0]);
 
-    xrRender_apply_tf();
     ::PortalTraverser.initialize();
     FluidManager.Initialize(70, 70, 70);
     //	FluidManager.Initialize( 100, 100, 100 );
@@ -531,7 +530,6 @@ void CRender::reset_end()
     }
     //-AVO
 
-    xrRender_apply_tf();
     FluidManager.SetScreenSize(Device.dwWidth, Device.dwHeight);
 
     // Set this flag true to skip the first render frame,
@@ -1597,7 +1595,7 @@ static inline bool match_shader(
 static inline bool match_shader_id(
     LPCSTR const debug_shader_id, LPCSTR const full_shader_id, FS_FileSet const& file_set, string_path& result)
 {
-#if 0
+#if 1
 	strcpy_s					( result, "" );
 	return						false;
 #else // #if 1

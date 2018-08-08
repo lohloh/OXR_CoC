@@ -49,7 +49,6 @@ class CMainMenu : public IMainMenu,
                   public CDialogHolder,
                   public CUIWndCallback,
                   public CDeviceResetNotifier
-
 {
     CUIDialogWnd* m_startDialog;
 
@@ -138,7 +137,7 @@ public:
     virtual ~CMainMenu();
 
     virtual void Activate(bool bActive);
-    virtual bool IsActive();
+    bool IsActive() const override;
     virtual bool CanSkipSceneRendering();
 
     virtual bool isLanguageChanged();
@@ -155,7 +154,7 @@ public:
     virtual void IR_OnKeyboardRelease(int dik);
     virtual void IR_OnKeyboardHold(int dik);
 
-    virtual void IR_OnMouseWheel(int direction);
+    virtual void IR_OnMouseWheel(int x, int y);
 
     bool OnRenderPPUI_query();
     void OnRenderPPUI_main();
