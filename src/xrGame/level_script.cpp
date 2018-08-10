@@ -570,7 +570,7 @@ void stop_tutorial()
         g_tutorial->Stop();
 }
 
-LPCSTR translate_string(LPCSTR str) { return *CStringTable().translate(str); }
+LPCSTR translate_string(LPCSTR str) { return *StringTable().translate(str); }
 bool has_active_tutotial() { return (g_tutorial != NULL); }
 
 //Alundaio: namespace level exports extension
@@ -687,7 +687,7 @@ xrTime get_start_time()
 
 void reload_language()
 {
-    CStringTable().ReloadLanguage();
+    StringTable().ReloadLanguage();
 }
 
 CScriptGameObject* get_view_entity_script()

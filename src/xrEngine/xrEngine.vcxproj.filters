@@ -238,6 +238,9 @@
     <Filter Include="Interfaces\ILoadingScreen">
       <UniqueIdentifier>{84e3429f-eb46-4db1-bd1c-9af2413b1de0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Game API\StringTable">
+      <UniqueIdentifier>{948b4643-0f42-4027-ac44-dbe3702887f4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="defines.h">
@@ -570,6 +573,15 @@
     <ClInclude Include="ILoadingScreen.h">
       <Filter>Interfaces\ILoadingScreen</Filter>
     </ClInclude>
+    <ClInclude Include="xr_input_xinput.h">
+      <Filter>Interfaces\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="StringTable\IStringTable.h">
+      <Filter>Game API\StringTable</Filter>
+    </ClInclude>
+    <ClInclude Include="StringTable\IStringTableDefs.h">
+      <Filter>Game API\StringTable</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="defines.cpp">
@@ -886,6 +898,12 @@
     </ClCompile>
     <ClCompile Include="splash.cpp">
       <Filter>General</Filter>
+    </ClCompile>
+    <ClCompile Include="xr_input_xinput.cpp">
+      <Filter>Interfaces\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="StringTable\IStringTable.cpp">
+      <Filter>Game API\StringTable</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

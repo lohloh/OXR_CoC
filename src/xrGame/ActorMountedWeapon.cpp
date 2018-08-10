@@ -6,7 +6,7 @@
 #include "ActorEffector.h"
 #include "CharacterPhysicsSupport.h"
 #include "holder_custom.h"
-#include "script_callback_ex.h"
+#include "xrScriptEngine/script_callback_ex.h"
 #include "script_game_object.h"
 #include "Car.h"
 
