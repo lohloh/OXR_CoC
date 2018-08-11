@@ -121,15 +121,6 @@
     <Filter Include="Engine\text_editor\edit_actions">
       <UniqueIdentifier>{e23b35a1-652e-47bb-8941-1653504cd776}</UniqueIdentifier>
     </Filter>
-    <Filter Include="RenderRef">
-      <UniqueIdentifier>{e4d34774-3a5b-468f-9400-12c702636fa1}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="RenderRef\Execution &amp; 3D">
-      <UniqueIdentifier>{32271206-64dd-4f87-a215-4b1106afd35f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="RenderRef\Execution &amp; 3D\Device">
-      <UniqueIdentifier>{43966447-6d34-46c3-956d-adaa49b48525}</UniqueIdentifier>
-    </Filter>
     <Filter Include="editor">
       <UniqueIdentifier>{94169f02-9d9d-46d0-9fdf-58f636a57c46}</UniqueIdentifier>
     </Filter>
@@ -240,6 +231,9 @@
     </Filter>
     <Filter Include="Game API\StringTable">
       <UniqueIdentifier>{948b4643-0f42-4027-ac44-dbe3702887f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Rendering Device">
+      <UniqueIdentifier>{e4d34774-3a5b-468f-9400-12c702636fa1}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -432,15 +426,6 @@
     <ClInclude Include="edit_actions.h">
       <Filter>Engine\text_editor\edit_actions</Filter>
     </ClInclude>
-    <ClInclude Include="device.h">
-      <Filter>RenderRef\Execution &amp; 3D\Device</Filter>
-    </ClInclude>
-    <ClInclude Include="StatGraph.h">
-      <Filter>RenderRef\Execution &amp; 3D\Device</Filter>
-    </ClInclude>
-    <ClInclude Include="Stats.h">
-      <Filter>RenderRef\Execution &amp; 3D\Device</Filter>
-    </ClInclude>
     <ClInclude Include="engine_impl.hpp">
       <Filter>editor\engine_impl</Filter>
     </ClInclude>
@@ -540,12 +525,6 @@
     <ClInclude Include="GameMtlLib.h">
       <Filter>Game API\MaterialSystem</Filter>
     </ClInclude>
-    <ClInclude Include="PerformanceAlert.hpp">
-      <Filter>RenderRef\Execution &amp; 3D\Device</Filter>
-    </ClInclude>
-    <ClInclude Include="IPerformanceAlert.hpp">
-      <Filter>RenderRef\Execution &amp; 3D\Device</Filter>
-    </ClInclude>
     <ClInclude Include="IGameFont.hpp">
       <Filter>Render\Font output</Filter>
     </ClInclude>
@@ -581,6 +560,21 @@
     </ClInclude>
     <ClInclude Include="StringTable\IStringTableDefs.h">
       <Filter>Game API\StringTable</Filter>
+    </ClInclude>
+    <ClInclude Include="device.h">
+      <Filter>Rendering Device</Filter>
+    </ClInclude>
+    <ClInclude Include="IPerformanceAlert.hpp">
+      <Filter>Rendering Device</Filter>
+    </ClInclude>
+    <ClInclude Include="PerformanceAlert.hpp">
+      <Filter>Rendering Device</Filter>
+    </ClInclude>
+    <ClInclude Include="StatGraph.h">
+      <Filter>Rendering Device</Filter>
+    </ClInclude>
+    <ClInclude Include="Stats.h">
+      <Filter>Rendering Device</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -761,33 +755,6 @@
     <ClCompile Include="edit_actions.cpp">
       <Filter>Engine\text_editor\edit_actions</Filter>
     </ClCompile>
-    <ClCompile Include="device.cpp">
-      <Filter>RenderRef\Execution &amp; 3D\Device</Filter>
-    </ClCompile>
-    <ClCompile Include="Device_create.cpp">
-      <Filter>RenderRef\Execution &amp; 3D\Device</Filter>
-    </ClCompile>
-    <ClCompile Include="Device_destroy.cpp">
-      <Filter>RenderRef\Execution &amp; 3D\Device</Filter>
-    </ClCompile>
-    <ClCompile Include="Device_Initialize.cpp">
-      <Filter>RenderRef\Execution &amp; 3D\Device</Filter>
-    </ClCompile>
-    <ClCompile Include="Device_Misc.cpp">
-      <Filter>RenderRef\Execution &amp; 3D\Device</Filter>
-    </ClCompile>
-    <ClCompile Include="Device_overdraw.cpp">
-      <Filter>RenderRef\Execution &amp; 3D\Device</Filter>
-    </ClCompile>
-    <ClCompile Include="Device_wndproc.cpp">
-      <Filter>RenderRef\Execution &amp; 3D\Device</Filter>
-    </ClCompile>
-    <ClCompile Include="StatGraph.cpp">
-      <Filter>RenderRef\Execution &amp; 3D\Device</Filter>
-    </ClCompile>
-    <ClCompile Include="Stats.cpp">
-      <Filter>RenderRef\Execution &amp; 3D\Device</Filter>
-    </ClCompile>
     <ClCompile Include="engine_impl.cpp">
       <Filter>editor\engine_impl</Filter>
     </ClCompile>
@@ -881,9 +848,6 @@
     <ClCompile Include="GameMtlLib_Engine.cpp">
       <Filter>Game API\MaterialSystem</Filter>
     </ClCompile>
-    <ClCompile Include="PerformanceAlert.cpp">
-      <Filter>RenderRef\Execution &amp; 3D\Device</Filter>
-    </ClCompile>
     <ClCompile Include="IGame_Level.cpp">
       <Filter>Game API\Level</Filter>
     </ClCompile>
@@ -904,6 +868,36 @@
     </ClCompile>
     <ClCompile Include="StringTable\IStringTable.cpp">
       <Filter>Game API\StringTable</Filter>
+    </ClCompile>
+    <ClCompile Include="device.cpp">
+      <Filter>Rendering Device</Filter>
+    </ClCompile>
+    <ClCompile Include="Device_create.cpp">
+      <Filter>Rendering Device</Filter>
+    </ClCompile>
+    <ClCompile Include="Device_destroy.cpp">
+      <Filter>Rendering Device</Filter>
+    </ClCompile>
+    <ClCompile Include="Device_Initialize.cpp">
+      <Filter>Rendering Device</Filter>
+    </ClCompile>
+    <ClCompile Include="Device_Misc.cpp">
+      <Filter>Rendering Device</Filter>
+    </ClCompile>
+    <ClCompile Include="Device_overdraw.cpp">
+      <Filter>Rendering Device</Filter>
+    </ClCompile>
+    <ClCompile Include="Device_wndproc.cpp">
+      <Filter>Rendering Device</Filter>
+    </ClCompile>
+    <ClCompile Include="PerformanceAlert.cpp">
+      <Filter>Rendering Device</Filter>
+    </ClCompile>
+    <ClCompile Include="StatGraph.cpp">
+      <Filter>Rendering Device</Filter>
+    </ClCompile>
+    <ClCompile Include="Stats.cpp">
+      <Filter>Rendering Device</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
