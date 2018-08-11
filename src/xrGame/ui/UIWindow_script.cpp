@@ -3,6 +3,7 @@
 #include "UIDialogHolder.h"
 #include "GamePersistent.h"
 #include "UILabel.h"
+#include "UIMessageBoxEx.h"
 #include "UIMMShniaga.h"
 #include "UISleepStatic.h"
 #include "ScriptXMLInit.h"
@@ -29,6 +30,15 @@ SCRIPT_EXPORT(CUIDialogWnd, (CUIWindow), {
                          .def("ShowDialog", &CUIDialogWnd::ShowDialog)
                          .def("HideDialog", &CUIDialogWnd::HideDialog)
                          .def("GetHolder", &CUIDialogWnd::GetHolder)];
+});
+
+SCRIPT_EXPORT(CUIMessageBoxEx, (CUIDialogWnd), {
+    module(luaState)[class_<CUIMessageBoxEx, CUIDialogWnd>("CUIMessageBoxEx")
+    .def(constructor<>())
+    .def("InitMessageBox", &CUIMessageBoxEx::InitMessageBox)
+    .def("SetText", &CUIMessageBoxEx::SetText)
+    .def("GetHost", &CUIMessageBoxEx::GetHost)
+    .def("GetPassword", &CUIMessageBoxEx::GetPassword)];
 });
 
 SCRIPT_EXPORT(CUIMMShniaga, (CUIWindow), {
