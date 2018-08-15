@@ -18,8 +18,11 @@
     <ClInclude Include="stdafx.h">
       <Filter>Kernel</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Include\xrAPI\xrAPI.h">
+    <ClInclude Include="xrAPI.h">
       <Filter>Kernel</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Natvis Include="..\TypeHelper.natvis" />
   </ItemGroup>
 </Project>

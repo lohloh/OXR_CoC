@@ -3,7 +3,7 @@
 
 #include "render.h"
 #include "Layers/xrRender/ResourceManager.h"
-#include "Include/xrAPI/xrAPI.h"
+#include "xrAPI/xrAPI.h"
 //---------------------------------------------------------------------------
 float ssaDISCARD = 4.f;
 float ssaDONTSORT = 32.f;

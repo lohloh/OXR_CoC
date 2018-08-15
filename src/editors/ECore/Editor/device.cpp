@@ -59,7 +59,7 @@ CEditorRenderDevice::CEditorRenderDevice()
 
 CEditorRenderDevice::~CEditorRenderDevice() { VERIFY(!b_is_Ready); }
 extern void Surface_Init();
-#include "Include/xrAPI/xrAPI.h"
+#include "xrAPI/xrAPI.h"
 #include "../../Layers/xrRender/dxRenderFactory.h"
 
 void CEditorRenderDevice::Initialize()

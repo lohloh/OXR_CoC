@@ -7,7 +7,7 @@
 #include "Layers/xrRender/HW.h"
 #include "xrEngine/xr_input.h"
 #include "xrEngine/XR_IOConsole.h"
-#include "Include/xrAPI/xrAPI.h"
+#include "xrAPI/xrAPI.h"
 #include "xrCore/xr_token.h"
 
 CHW HW;

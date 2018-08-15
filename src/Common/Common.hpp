@@ -4,7 +4,7 @@
 #include "Common/Platform.hpp"
 #include "Common/CommonImportExport.inl"
 #include "Common/FSMacros.hpp"
-#include "Include/xrAPI/xrAPI.h"
+#include "xrAPI/xrAPI.h"
 
 #if __has_include(<SDL.h>)
 #include <SDL.h>

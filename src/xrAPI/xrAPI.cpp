@@ -1,4 +1,4 @@
 #include "stdafx.h"
-#include "Include/xrAPI/xrAPI.h"
+#include "xrAPI/xrAPI.h"
 
 EngineGlobalEnvironment GEnv = {};

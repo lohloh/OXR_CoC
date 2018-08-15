@@ -13,7 +13,7 @@
 #ifndef _EDITOR
 #include "xrEngine/Render.h"
 #else
-#include "Include/xrAPI/xrAPI.h"
+#include "xrAPI/xrAPI.h"
 #endif
 #include "SkeletonX.h"
 #include "SkeletonCustom.h"

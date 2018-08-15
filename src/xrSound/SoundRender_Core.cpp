@@ -1,6 +1,6 @@
 #include "stdafx.h"
 
-#include "Include/xrAPI/xrAPI.h"
+#include "xrAPI/xrAPI.h"
 #include "Common/LevelStructure.hpp"
 #include "SoundRender_Core.h"
 #include "SoundRender_Source.h"
