@@ -3,7 +3,8 @@
 	url = https://github.com/LuaJIT/LuaJIT.git
 [submodule "Externals/luabind"]
 	path = Externals/luabind
-    url = https://github.com/OpenXRay/luabind-deboostified.git
+    url = https://github.com/qweasdd136963/luabind-deboostified.git
+	branch = OXR
 [submodule "Externals/GameSpy"]
 	path = Externals/GameSpy
 	url = https://github.com/nitrocaster/GameSpy.git
