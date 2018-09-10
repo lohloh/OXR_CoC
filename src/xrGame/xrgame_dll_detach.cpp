@@ -104,7 +104,6 @@ void clean_game_globals()
 #ifdef DEBUG
     // XXX nitrocaster PROFILER: temporarily disabled due to linkage issues
     // xr_delete										(g_profiler);
-    // release_smart_cast_stats();
 #endif
 
     RELATION_REGISTRY::clear_relation_registry();
