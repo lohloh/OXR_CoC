@@ -10,7 +10,7 @@
 #define EXTENDED_WEAPON_CALLBACKS // (eOnWeaponZoomIn, eOnWeaponZoomOut, eOnWeaponJammed)
 //#define ACTOR_BEFORE_DEATH_CALLBACK // For extending the life of the actor to fake death or do other tasks that need to happen before actor is dead
 #define INPUT_CALLBACKS // (eKeyPress, eKeyRelease, eKeyHold, eMouseMove, eMouseWheel)
-#define ENGINE_LUA_ALIFE_STORAGE_MANAGER_CALLBACKS // calls lua functions from engine in a script named alife_storage_manager.script  (alife_storage_manager.CALifeStorageManager_save) and (alife_storage_manager.CALifeStorageManager_load)
+#define ENGINE_LUA_ALIFE_STORAGE_MANAGER_CALLBACKS // calls lua functions from engine in a script named alife_storage_manager.script (alife_storage_manager.CALifeStorageManager_save) and (alife_storage_manager.CALifeStorageManager_load)
 #define ENGINE_LUA_ALIFE_UPDAGE_MANAGER_CALLBACKS // calls lua function named on_before_change_level and on_after_new_game in _G.script when enabled
 
 /* Scripts */
@@ -31,7 +31,10 @@
 
 /* Sound: */
 #define NEW_SOUNDS // use new sounds. Please enclose any new sound additions with this define
-#define LAYERED_SND_SHOOT// see comment down below
+#define LAYERED_SND_SHOOT // see comment down below
+
+/* Debug: */
+//#define USE_LOG_TIMING
 
 /* LAYERED_SND_SHOOT by Alundaio
 When defined, it will allow you to play a group of sounds from a specified section for snd_shoot.

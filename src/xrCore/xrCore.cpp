@@ -203,6 +203,8 @@ void xrCore::Initialize(pcstr _ApplicationName, LogCallback cb, bool init_fs, pc
             CoInitializeEx(nullptr, COINIT_MULTITHREADED);
 #endif
 
+        initParamFlags();
+
         string_path fn, dr, di;
 
         // application path
@@ -288,6 +290,14 @@ void xrCore::Initialize(pcstr _ApplicationName, LogCallback cb, bool init_fs, pc
     }
     SetLogCB(cb);
     init_counter++;
+}
+
+void xrCore::initParamFlags()
+{
+    if (strstr(Params, "-dbg"))
+        ParamFlags.set(ParamFlag::dbg, true);
+    if (strstr(Params, "-dev"))
+        ParamFlags.set(ParamFlag::dev, true);
 }
 
 void xrCore::_destroy()
